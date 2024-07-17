@@ -1,6 +1,9 @@
 from pydantic import BaseModel, EmailStr, Field
-from typing import Optional
+from typing import Dict, List, Optional
 from datetime import datetime
+
+from pydentity.core.models.identity import SSOProvider
+from pydentity.core.schemas.roles import RoleInDB
 from .identity import UserIdentity
 
 class UserBase(UserIdentity):
@@ -40,8 +43,6 @@ class UserUpdate(BaseModel):
         email (Optional[EmailStr]): The new email address for the user. Must be a valid email format if provided.
         is_active (Optional[bool]): Flag indicating if the user account should be active or not.
     """
-
-    username: Optional[str] = Field(None, min_length=5, max_length=50)
     email: Optional[EmailStr] = None
     is_active: Optional[bool] = None
 
@@ -63,11 +64,17 @@ class UserInDB(UserBase):
 
     id: str
     hashed_password: str
+    roles: List[RoleInDB] = []
+    claims: Dict[str, List[str]] = {}
     created_at: datetime
     updated_at: datetime
+    last_login: Optional[datetime] = None
+    email_verified: bool = False
+    sso_provider: Optional[SSOProvider] = None
+    sso_id: Optional[str] = None
 
     class Config:
-        from_attributes = True
+        orm_mode = True
 
 class UserOut(UserBase):
     """
@@ -84,7 +91,10 @@ class UserOut(UserBase):
     """
 
     id: str
+    roles: List[RoleInDB] = []
+    claims: Dict[str, List[str]] = {}
     created_at: datetime
+    email_verified: bool
 
     class Config:
-        from_attributes = True
+        orm_mode = True

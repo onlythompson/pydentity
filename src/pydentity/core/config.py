@@ -20,6 +20,9 @@ class Settings(BaseSettings):
     MONGODB_URL: str
     MONGODB_DB_NAME: str = "pydentity"
 
+    TEST_MONGODB_URL: str = "mongodb://localhost:27017"
+    TEST_MONGODB_DB_NAME: str = "pydentity_test"
+
      # SSO Settings
     GOOGLE_CLIENT_ID: str
     APPLE_CLIENT_ID: str

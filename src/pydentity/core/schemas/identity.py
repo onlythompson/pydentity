@@ -2,6 +2,8 @@ from enum import Enum
 from pydantic import BaseModel, EmailStr, Field
 from typing import Optional
 from datetime import datetime
+from  pydentity.core.models import IdentityType
+from pydentity.core.models.identity import VerificationStatus
 
 
 
@@ -19,6 +21,7 @@ class IdentityBase(BaseModel):
     username: str = Field(..., min_length=5, max_length=50)
     IdentityType: IdentityType
     is_active: bool = True
+    verification_status: VerificationStatus = VerificationStatus.unverified
 
 class UserIndentity(IdentityBase):
     """
@@ -28,6 +31,15 @@ class UserIndentity(IdentityBase):
     """
 
     IdentityType = IdentityType.user
+
+class SSOUserIndentity(IdentityBase):
+    """
+    User identity model.
+
+    Inherits from IdentityBase with IdentityType set to sso user.
+    """
+
+    IdentityType = IdentityType.sso_user
 
 class AgentIdentity(IdentityBase):
     """

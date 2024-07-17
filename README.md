@@ -1,6 +1,6 @@
 # PyIdentity
 
-PyIdentity is a flexible, high-performance identity and profile management middleware for FastAPI applications. It provides a robust set of tools to handle user authentication, authorization, and profile management, designed to be easily integrated and customized in existing FastAPI projects.
+Pydentity is a flexible, high-performance identity and profile management middleware for FastAPI applications. It provides a robust set of tools to handle user authentication, authorization, and profile management, designed to be easily integrated and customized in existing FastAPI projects.
 
 ## Features
 
@@ -29,16 +29,16 @@ PyIdentity is a flexible, high-performance identity and profile management middl
 ## Installation
 
 ```bash
-pip install pyidentity
+pip install pydentity
 ```
 
 ## Quick Start
 
-1. Add PyIdentity middleware to your FastAPI application:
+1. Add Pydentity middleware to your FastAPI application:
 
 ```python
 from fastapi import FastAPI
-from pyidentity import PyIdentityMiddleware, PyIdentityConfig
+from pydentity import PydentityMiddleware, PydentityConfig
 
 app = FastAPI()
 
@@ -51,10 +51,10 @@ identity_config = PyIdentityConfig(
 app.add_middleware(PyIdentityMiddleware, config=identity_config)
 ```
 
-2. Use PyIdentity decorators in your routes:
+2. Use Pydentity decorators in your routes:
 
 ```python
-from pyidentity import require_auth, get_current_user
+from pydentity import require_auth, get_current_user
 
 @app.get("/protected")
 @require_auth
@@ -65,7 +65,7 @@ async def protected_route(current_user = Depends(get_current_user)):
 3. Customize claims validation:
 
 ```python
-from pyidentity import ClaimsValidator
+from pydentity import ClaimsValidator
 
 class CustomClaimsValidator(ClaimsValidator):
     async def validate(self, claims: dict) -> bool:
@@ -82,7 +82,7 @@ PyIdentity allows you to easily customize or override default routes:
 ```python
 from pyidentity import PyIdentityRouter
 
-custom_router = PyIdentityRouter()
+custom_router = PydentityRouter()
 
 @custom_router.post("/custom-login")
 async def custom_login(credentials: dict):
@@ -97,7 +97,7 @@ identity_config.set_router(custom_router)
 PyIdentity provides core services that you can use in your application:
 
 ```python
-from pyidentity import get_token_service, get_user_service
+from pydentity import get_token_service, get_user_service
 
 @app.get("/user-info")
 async def get_user_info(token: str):
@@ -111,7 +111,7 @@ async def get_user_info(token: str):
 
 ## Documentation
 
-For full documentation, visit [pyidentity.readthedocs.io](https://pyidentity.readthedocs.io).
+For full documentation, visit [pydentity.readthedocs.io](https://pydentity.readthedocs.io).
 
 ## Contributing
 
@@ -119,10 +119,10 @@ We welcome contributions! Please see our [Contributing Guide](CONTRIBUTING.md) f
 
 ## License
 
-PyIdentity is released under the MIT License. See the [LICENSE](LICENSE) file for more details.
+Pydentity is released under the MIT License. See the [LICENSE](LICENSE) file for more details.
 
 ## Support
 
-If you encounter any problems or have any questions, please [open an issue](https://github.com/onlythompson/pyidentity/issues) on GitHub.
+If you encounter any problems or have any questions, please [open an issue](https://github.com/onlythompson/pydentity/issues) on GitHub.
 
 ---
