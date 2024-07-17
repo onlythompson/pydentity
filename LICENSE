@@ -1,6 +1,6 @@
 MIT License
 
-Copyright (c) 2024 Dominic Thompson
+Copyright (c) 2024 - Dominic Thompson
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -19,3 +19,49 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
+
+Additional Clauses:
+
+1. Contributions: Any contribution intentionally submitted for inclusion in the
+   Software by you shall be under the terms and conditions of this License,
+   without any additional terms or conditions.
+
+2. Third-Party Components: This Software may include or depend upon third-party
+   software components, each of which has its own license. You agree to comply
+   with the terms and conditions of the respective licenses of these third-party
+   components.
+
+3. Data Protection: If you use this Software to process personal data, you are
+   solely responsible for complying with all applicable data protection laws and
+   regulations.
+
+4. No Trademark Rights: This license does not grant you any rights to use the
+   names, logos, or trademarks of the copyright holder.
+
+5. Modifications: If you modify the Software, you must clearly indicate that you
+   have made changes to the original Software.
+
+6. Compatibility: This License is compatible with other open source licenses.
+   However, if you combine this Software with other software under different
+   licenses, you are responsible for complying with all applicable license terms.
+
+7. Updates: The copyright holder reserves the right to release future versions of
+   the Software under different terms or to stop distributing the Software at any
+   time without prior notice.
+
+8. Indemnification: You agree to indemnify and hold harmless the copyright holder
+   from any claim, demand, or damage, including reasonable attorneys' fees,
+   arising out of or related to your use or distribution of the Software.
+
+9. Jurisdiction: Any disputes arising from this License will be governed by the
+   laws of [Your Jurisdiction], without regard to conflict of law principles.
+
+10. Severability: If any provision of this License is held to be unenforceable or
+    invalid, that provision will be enforced to the maximum extent possible, and
+    the other provisions will remain in full force and effect.
+
+By using, copying, modifying, or distributing the Software, you agree to be
+bound by the terms of this License. If you do not agree to these terms, you are
+not permitted to use, copy, modify, or distribute the Software.
+
+For any questions regarding this License, please contact: onlythompson@gmail.com
